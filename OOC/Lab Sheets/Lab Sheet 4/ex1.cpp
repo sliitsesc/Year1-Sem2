@@ -8,18 +8,18 @@ using namespace std;
 struct Circle 
 {
 	float radius;
-};
+}circle;
 
 struct Rectangle
 {
 	float length;
 	float width;
-};
+}rectangleLarge, rectangleSmall;
 
 struct Square
 {
 	float length;
-};
+}square;
 
 float circleArea(float radius);
 float rectangleArea(float length, float width);
@@ -28,8 +28,26 @@ float squareArea(float length);
 int main()
 {
 	float grassArea;
+	
+	cout << "Input radius for circle : ";
+	cin >> circle.radius;
 
-	grassArea = rectangleArea(28, 15) - (circleArea(5) + squareArea(4) + rectangleArea(3,7));
+	cout << "Input length for recatangle : ";
+	cin >> rectangleLarge.length;
+
+	cout << "Input width for recatangle : ";
+	cin >> rectangleLarge.width;
+
+	cout << "Input length for recatangle : ";
+	cin >> rectangleSmall.length;
+
+	cout << "Input width for recatangle : ";
+	cin >> rectangleSmall.width;
+
+	cout << "Input length for square : ";
+	cin >> square.length;
+
+	grassArea = rectangleArea(rectangleLarge.length, rectangleLarge.width) - (circleArea(circle.radius) + squareArea(square.length) + rectangleArea(rectangleSmall.length,rectangleSmall.width));
 
 	cout << "Grass Area : " << grassArea;
 

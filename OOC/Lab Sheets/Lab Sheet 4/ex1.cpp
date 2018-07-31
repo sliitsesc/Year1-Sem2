@@ -29,7 +29,7 @@ float fenceBuildingCost(float perimeter, float costPerUnit);
 
 int main()
 {
-	float grassArea;
+	float grassArea, costPerUnit;
 
 	cout << "Input radius for circle : ";
 	cin >> circle.radius;
@@ -53,6 +53,11 @@ int main()
 
 	cout << "Grass Area : " << grassArea;
 
+	cout << "Input Fence Cost per Unit";
+	cin >> costPerUnit;
+
+	cout << "Cost of building a fence : " 
+		<< fenceBuildingCost(calPerimeter(rectangleLarge.length, rectangleLarge.width), costPerUnit);
 	return 0;
 }
 

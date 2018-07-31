@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-struct Circle 
+struct Circle
 {
 	float radius;
 }circle;
@@ -24,11 +24,13 @@ struct Square
 float circleArea(float radius);
 float rectangleArea(float length, float width);
 float squareArea(float length);
+float calPerimeter(float length, float width);
+float fenceBuildingCost(float perimeter, float costPerUnit);
 
 int main()
 {
 	float grassArea;
-	
+
 	cout << "Input radius for circle : ";
 	cin >> circle.radius;
 
@@ -47,11 +49,11 @@ int main()
 	cout << "Input length for square : ";
 	cin >> square.length;
 
-	grassArea = rectangleArea(rectangleLarge.length, rectangleLarge.width) - (circleArea(circle.radius) + squareArea(square.length) + rectangleArea(rectangleSmall.length,rectangleSmall.width));
+	grassArea = rectangleArea(rectangleLarge.length, rectangleLarge.width) - (circleArea(circle.radius) + squareArea(square.length) + rectangleArea(rectangleSmall.length, rectangleSmall.width));
 
 	cout << "Grass Area : " << grassArea;
 
-    return 0;
+	return 0;
 }
 
 float circleArea(float radius) {
@@ -64,4 +66,12 @@ float rectangleArea(float length, float width) {
 
 float squareArea(float length) {
 	return length * length;
+}
+
+float calPerimeter(float length, float width) {
+	return 2 * (length + width);
+}
+
+float fenceBuildingCost(float perimeter, float costPerUnit) {
+	return perimeter * costPerUnit;
 }

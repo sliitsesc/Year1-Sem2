@@ -92,3 +92,8 @@ SELECT fname + lname name,sname
 FROM customer c, state s
 WHERE c.state = s.code;
 
+--2
+SELECT s.stock_num, s.description, m.manu_name
+FROM stock s, manufact m
+WHERE s.manu_code = m.manu_code;
+

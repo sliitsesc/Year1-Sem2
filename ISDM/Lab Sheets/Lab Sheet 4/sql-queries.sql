@@ -25,4 +25,26 @@ FROM customer
 WHERE state='CA' AND city ='Redwood city';
 
 --5
+SELECT description AS 'Description', unit_price AS 'Unit Price'
+FROM stock
+WHERE manu_code='NRG';
 
+--6
+SELECT unit_price AS 'Unit Price', description AS 'Description'
+FROM stock
+WHERE manu_code = 'HRO' OR manu_code = 'HSK';
+
+--7
+SELECT order_num AS 'Order No'
+FROM orders
+WHERE order_date > '2011/04/07';
+
+--8
+SELECT description AS 'Description'
+FROM stock
+WHERE unit_price BETWEEN 100 AND 250;
+
+--9
+SELECT customer_num AS 'Customer No',fname AS 'First Name',lname AS 'Last Name'
+FROM customer
+WHERE city IS NULL;

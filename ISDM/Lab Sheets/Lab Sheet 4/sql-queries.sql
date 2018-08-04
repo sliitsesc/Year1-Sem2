@@ -48,3 +48,28 @@ WHERE unit_price BETWEEN 100 AND 250;
 SELECT customer_num AS 'Customer No',fname AS 'First Name',lname AS 'Last Name'
 FROM customer
 WHERE city IS NULL;
+
+--10
+SELECT *
+FROM orders
+WHERE backlog IS NOT NULL;
+
+--11
+SELECT *
+FROM orders
+WHERE order_num IN (5,8,10);
+
+--12
+SELECT fname + lname name, address1,phone
+FROM customer
+WHERE city IN ('Blue island','Lake island', 'Redwood city');
+
+--13
+SELECT *
+FROM manufact
+WHERE manu_code LIKE 'H%';
+
+--14
+SELECT *
+FROM manufact
+WHERE manu_name LIKE '[A-N]%';

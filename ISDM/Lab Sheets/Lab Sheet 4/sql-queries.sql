@@ -73,3 +73,22 @@ WHERE manu_code LIKE 'H%';
 SELECT *
 FROM manufact
 WHERE manu_name LIKE '[A-N]%';
+
+--15
+SELECT *
+FROM customer
+WHERE lname LIKE '[D-HR]%'
+
+--16
+SELECT phone
+FROM customer
+WHERE company LIKE '%Ribbon%';
+
+--Exercise 2
+----------------------------------------------------------------------
+
+--1
+SELECT fname + lname name,sname 
+FROM customer c, state s
+WHERE c.state = s.code;
+

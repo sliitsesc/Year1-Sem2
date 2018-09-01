@@ -11,6 +11,11 @@ FROM manufact m, stock s
 WHERE s.manu_code = m.manu_code;
 
 # 3.	Prepare a list of manufacturers that supply kickboards. 
+
+SELECT m.manu_name AS 'Manufacture Name',s.description AS 'Description'
+FROM manufact m,stock s
+WHERE s.manu_code = m.manu_code AND s.description = 'kick board';
+
 # 4.	Find the number of customers live in each state. Display the name of the state and the number of customers.
 # 5.	Make a list of customers who have placed orders that weigh greater than 180. Display the customer’s First name along with the shipping weight.
 # 6.	Who are the customers that have ordered more than 100 items?

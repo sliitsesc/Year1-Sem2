@@ -17,7 +17,21 @@ FROM manufact m,stock s
 WHERE s.manu_code = m.manu_code AND s.description = 'kick board';
 
 # 4.	Find the number of customers live in each state. Display the name of the state and the number of customers.
+
+SELECT s.sname AS 'State Name',COUNT(c.customer_num) AS 'No of Customers'
+FROM customer c, state s
+WHERE c.state = s.code
+GROUP BY s.sname; 
+
 # 5.	Make a list of customers who have placed orders that weigh greater than 180. Display the customer’s First name along with the shipping weight.
+
+SELECT c.fname AS 'Name', o.ship_weight AS 'Shipping Weight'
+FROM customer c, orders o
+WHERE c.customer_num = o.customer_num AND o.ship_weight > 180;
+
 # 6.	Who are the customers that have ordered more than 100 items?
+
+
+
 # 7.	Find the orders which are having a total price greater than $20,000. Prepare a list containing order number, the first name of the customer who has placed the order and the total price.
 # 8.	Display the First name of the customers who have ordered swimcaps.

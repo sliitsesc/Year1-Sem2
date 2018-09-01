@@ -25,9 +25,11 @@ GROUP BY s.sname;
 
 # 5.	Make a list of customers who have placed orders that weigh greater than 180. Display the customer’s First name along with the shipping weight.
 
-SELECT c.fname AS 'Name', o.ship_weight AS 'Shipping Weight'
+SELECT c.fname AS 'Name', SUM(o.ship_weight) AS 'Shipping Weight'
 FROM customer c, orders o
-WHERE c.customer_num = o.customer_num AND o.ship_weight > 180;
+WHERE c.customer_num = o.customer_num
+GROUP BY c.fname
+HAVING SUM(o.ship_weight) > 180;
 
 # 6.	Who are the customers that have ordered more than 100 items?
 

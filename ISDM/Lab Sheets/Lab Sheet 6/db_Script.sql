@@ -33,7 +33,17 @@ HAVING SUM(o.ship_weight) > 180;
 
 # 6.	Who are the customers that have ordered more than 100 items?
 
-
+SELECT c.fname AS 'Name',SUM(i.quantity) AS 'Quantity' 
+FROM customer c, orders o,items i
+WHERE c.customer_num = o.customer_num AND o.order_num = i.order_num
+GROUP BY c.fname
+HAVING SUM(i.quantity) > 100;
 
 # 7.	Find the orders which are having a total price greater than $20,000. Prepare a list containing order number, the first name of the customer who has placed the order and the total price.
+# Not yet completed
+SELECT o.order_num AS 'Order No', i.total_price AS 'Total Price'
+FROM customer c,orders o,items i
+WHERE c.customer_num = o.customer_num AND o.order_num = i.order_num
+GROUP BY o.order_num; 
+
 # 8.	Display the First name of the customers who have ordered swimcaps.

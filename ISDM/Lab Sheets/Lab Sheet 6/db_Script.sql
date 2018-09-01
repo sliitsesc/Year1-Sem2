@@ -5,6 +5,11 @@ FROM customer c, state s
 WHERE s.code = c.state;
 
 # 2.	Display the stock details with the corresponding manufacture’s name.
+
+SELECT s.description,m.manu_name AS 'Manufacture Name'
+FROM manufact m, stock s
+WHERE s.manu_code = m.manu_code;
+
 # 3.	Prepare a list of manufacturers that supply kickboards. 
 # 4.	Find the number of customers live in each state. Display the name of the state and the number of customers.
 # 5.	Make a list of customers who have placed orders that weigh greater than 180. Display the customer’s First name along with the shipping weight.
